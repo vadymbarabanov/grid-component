@@ -1,0 +1,28 @@
+.Grid {
+  &_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_gap_sm > &_item {
+    margin: 8px;
+  }
+
+  &_gap_md > &_item {
+    margin: 16px;
+  }
+
+  &_gap_lg > &_item {
+    margin: 24px;
+  }
+
+  &_item {
+    display: block;
+  }
+
+  @for $i from 1 to 13 {
+    &_cols_#{$i} {
+      flex-basis: $i/12 * 100%;
+    }
+  }
+}

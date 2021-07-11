@@ -4,6 +4,21 @@ $gap: (
   "lg": 24px,
 );
 
+$breakpoints: (
+  "sm": 600px,
+  "md": 960px,
+  "lg": 1280px,
+);
+
+$justifyContent: (flex-start, flex-end, center, space-around, space-between);
+$alignItems: (flex-start, flex-end, center);
+
+@mixin breakpoint($name) {
+  @media screen and (min-width: map-get($breakpoints , $name )) {
+    @content;
+  }
+}
+
 .Grid {
   &_container {
     display: flex;
@@ -15,8 +30,32 @@ $gap: (
   }
 
   @for $i from 1 to 13 {
-    &_cols_#{$i} {
+    &_xs_#{$i} {
       flex-basis: $i/12 * 100%;
+    }
+  }
+
+  @include breakpoint("sm") {
+    @for $i from 1 to 13 {
+      &_sm_#{$i} {
+        flex-basis: $i/12 * 100%;
+      }
+    }
+  }
+
+  @include breakpoint("md") {
+    @for $i from 1 to 13 {
+      &_md_#{$i} {
+        flex-basis: $i/12 * 100%;
+      }
+    }
+  }
+
+  @include breakpoint("lg") {
+    @for $i from 1 to 13 {
+      &_lg_#{$i} {
+        flex-basis: $i/12 * 100%;
+      }
     }
   }
 
@@ -27,6 +66,18 @@ $gap: (
 
     &_gap_#{$name} > &_item {
       padding: $value;
+    }
+  }
+
+  @each $value in $justifyContent {
+    &_justifyContent_#{$value} {
+      justify-content: $value;
+    }
+  }
+
+  @each $value in $alignItems {
+    &_alignItems_#{$value} {
+      align-items: $value;
     }
   }
 }

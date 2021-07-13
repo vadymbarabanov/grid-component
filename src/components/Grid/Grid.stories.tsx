@@ -9,10 +9,10 @@ export default {
   component: Grid,
 } as ComponentMeta<typeof Grid>;
 
-export const Basic: ComponentStory<typeof Grid> = (args) => {
+export const Basic: ComponentStory<typeof Grid> = () => {
   return (
     <div style={{ position: "relative" }}>
-      <Grid container gap="sm" style={{ height: "100%" }} {...args}>
+      <Grid container gap="sm" style={{ height: "100%" }}>
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <Box>Box 1</Box>
         </Grid>
@@ -33,11 +33,11 @@ export const Basic: ComponentStory<typeof Grid> = (args) => {
   );
 };
 
-export const WithRuler: ComponentStory<typeof Grid> = ({ gap, ...args }) => {
+export const WithRuler: ComponentStory<typeof Grid> = () => {
   return (
     <div style={{ position: "relative" }}>
-      <GridRuler gap={gap || "sm"} />
-      <Grid container gap={gap || "sm"} style={{ height: "100%" }} {...args}>
+      <GridRuler gap={"sm"} />
+      <Grid container gap={"sm"} style={{ height: "100%" }}>
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <Box>Box 1</Box>
         </Grid>

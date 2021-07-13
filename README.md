@@ -7,7 +7,7 @@ Implementing Grid Component behavior:
 * justify-content and align-items
 * GridRuler - helper component for visualization
 
-Example: 
+### Example: 
 ```
 <Grid 
   container
@@ -24,3 +24,5 @@ Example:
   </Grid>
 </Grid>
 ```
+### Interactive environment
+Click 👉 [here](https://react-grid-component.netlify.app) 👈 to check it out!

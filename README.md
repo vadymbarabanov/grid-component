@@ -24,3 +24,4 @@ Example:
   </Grid>
 </Grid>
 ```
+Also you can click 👉 [here](https://react-grid-component.netlify.app) 👈 to check it out!
